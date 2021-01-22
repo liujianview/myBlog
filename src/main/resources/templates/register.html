@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>注册 | 程序猿刘川枫</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="icon" type="image/x-icon" href="http://images.liujian.cool/img/liuchuanfeng.jpg">
+    <link href="https://lib.baomitu.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+    <link href="https://lib.baomitu.com/font-awesome/5.8.0/css/fontawesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/register.css">
+
+    <script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://lib.baomitu.com/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="https://lib.baomitu.com/amazeui/2.7.2/js/amazeui.min.js"></script>\
+
+
+</head>
+<body>
+<div id="app">
+    <!--引入共有头部-->
+    <div th:replace="header :: header"></div>
+    <!--页面主体-->
+    <div id="main" style="margin-bottom: 0">
+        <div class="i_love_you">
+            <div class="am-g">
+                <br><br><br>
+                <strong><p id="hitokoto">每日一言获取中...</p></strong>
+            </div>
+            <hr />
+        </div>
+        <div id="register_big" class="am-g" style="height: 595px;">
+            <div id="register_clear" class="am-u-lg-6 am-u-sm-9 am-u-sm-centered">
+                <h3>注册</h3>
+                <hr>
+                <form id="registerForm" class="am-form">
+                    <label for="email" style="margin-top: 6px">邮箱号:</label>
+                    <div  class="am-form-group am-form-icon am-form-feedback" style="margin-left: 0">
+                        <input style="width: 80%" type="text" name="email" id="email" placeholder="快来用邮箱注册个账号吧">
+                        <span id="email_null" class="iconsNull icons am-icon-warning"></span>
+                        <span id="email_error" class="iconsError icons am-icon-times"></span>
+                    </div>
+                    <div id="email_warn" class="input_warn">
+                        <span>该邮箱号已存在！</span>
+                    </div>
+                    <div id="email_warn1" class="input_warn">
+                        <span>邮箱号不正确！</span>
+                    </div>
+                    <label for="auth_code" style="margin-top: 6px">验证码:</label>
+                    <div  class="am-form-group am-form-icon am-form-feedback" style="margin-left: 0;">
+                        <input style="width: 45%" type="text" name="auth_code" id="auth_code" placeholder="点右边获得验证码呦">
+                        <span id="auth_code_null" class="iconsAuthCodeNull icons am-icon-warning"></span>
+                        <span id="auth_code_error" class="iconsAuthCodeError icons am-icon-times"></span>
+                        <div class="getAuthCodeBtn">
+                            <button type="button" id="msg_btn" class="am-btn am-btn-secondary am-round">获取验证码</button>
+                        </div>
+                    </div>
+                    <div id="auth_code_warn" class="input_warn">
+                        <span>验证码错误！</span>
+                    </div>
+                    <label for="username" style="margin-top: 6px;">用户名:</label>
+                    <div  class="am-form-group am-form-icon am-form-feedback" style="margin-left: 0">
+                        <input type="text" name="username" id="username" placeholder="emmmmmm，用户名">
+                        <span id="username_null" class="iconsNull icons am-icon-warning"></span>
+                    </div>
+                    <div id="username_warn" class="input_warn">
+                        <span>该用户名已存在</span>
+                    </div>
+                    <div id="username_warn1" class="input_warn">
+                        <span>用户名长度过长或格式不正确</span>
+                    </div>
+                    <label for="password" style="margin: 6px 30px auto auto;">密码:</label>
+                    <div  class="am-form-group am-form-icon am-form-feedback" style="margin-left: 0">
+                        <input type="password" name="password" id="password" placeholder="悄悄的输入你的密码哦">
+                        <span id="password_null" class="iconsNull icons am-icon-warning"></span>
+                    </div>
+                    <div class="input_warn">
+                        <span>密码错误</span>
+                    </div>
+
+                    <label style="margin: 6px 30px auto auto;">性别:</label>
+                    <div class="radio_input am-form-group" style="margin: 0 0 10px auto">
+                        <label class="am-radio-inline">
+                            <input type="radio" name="gender" value="male" data-am-ucheck>
+                            <span class="am-icon-male am-icon-sm"></span>
+                        </label>
+                        <label class="am-radio-inline" style="margin-left: 40px">
+                            <input type="radio" name="gender" value="female" data-am-ucheck>
+                            <span class="am-icon-female am-icon-sm"></span>
+                        </label>
+                        <div class="gender_null">
+                            <span id="gender_null" class="icons">就不能告诉我你是GG还是MM么 o(╥﹏╥)o</span>
+                        </div>
+                    </div>
+                </form>
+                <div class="am-u-lg-10 am-u-sm-12" style="margin-top: 30px">
+                    <input type="submit" id="registerFormBtn" value="注 册" class="am-btn am-btn-primary am-btn-sm am-fl" style="border-radius: 5px">
+                    <a href="/login" type="button" class="am-btn am-btn-default am-btn-sm am-fr" style="border-radius: 5px">
+                        去登录看看 (#^.^#)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--引入共有底部-->
+    <div th:replace="footer :: footer"></div>
+    <!--消息盒子+反馈-->
+    <div th:replace="other :: other"></div>
+</div>
+
+<script src="js/register.js"></script>
+<script src="js/all.js"></script>
+</body>
+</html>

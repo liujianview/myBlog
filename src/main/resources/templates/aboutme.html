@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>关于我 | 程序猿刘川枫</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/x-icon" href="http://images.liujian.cool/img/liuchuanfeng.jpg">
+    <link rel="stylesheet" type="text/css" href="css/aboutmetimeline.css">
+    <link href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+    <link href="https://lib.baomitu.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/aboutme.css">
+    <link href="https://lib.baomitu.com/font-awesome/5.8.0/css/fontawesome.min.css" rel="stylesheet">
+
+    <script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://lib.baomitu.com/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="https://lib.baomitu.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <!--引入共有头部-->
+    <div th:replace="header :: header"></div>
+    <!--页面主体-->
+    <div id="main">
+        <div class="am-container">
+            <div class="am-g">
+                <div class="am-u-sm-12 am-u-lg-12">
+                    <div id="wordsView">
+                        <div class="title">
+                            <div class="title-words">
+                                <h1 class="title-words-h1">关于我</h1>
+                            </div>
+
+                            <div class="title-img">
+                                <p>
+                                    <img src="http://images.liujian.cool/img/loading.gif" data-src="http://images.liujian.cool/img/liuchuanfeng.jpg" class="enlargePicture am-img-thumbnail am-radius">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="zhy-my-words"  data-am-scrollspy="{animation: 'scale-down'}">
+                            <p><i class="am-icon-quote-left " style="float: left"></i></p><br>
+                            <div class="zhy-info">
+                                <p class="zhy-info-words">
+                                    刘川枫，20年毕业于长春某大学，19年末加入北漂大军。目前在北京一家第三方支付公司做Java开发，
+                                    对Java等后端技术有着浓烈的兴趣，梦想成为懂技术也懂生活的程序猿，也将一直为此不断努力着。
+                                    <br><br>
+                                    至于为什么起“刘川枫”这个笔名，因为鄙人姓刘，最喜欢的动漫是《灌篮高手》，觉得里面的流川枫很酷很酷，
+                                    恰巧想去但一直没去过的地方是四川，喜欢周杰伦的《枫》，这就很巧，哈哈哈哈哈～
+                                    <br><br>
+                                </p>
+                            </div>
+                            <p><i class="am-icon-quote-right " style="float: right"></i></p><br><hr>
+                        </div>
+                        <div class="zhy-hobby">
+                            <blockquote style="padding: 10px 18px">
+                                兴趣爱好
+                                <ul>
+                                    <li>喜欢编程：沉迷于Java开发，专注于Web后端技术，追求新技术探索；</li>
+                                    <li>喜欢旅游：重要的是和对的人一起看想看的风景；</li>
+                                    <li>喜欢看剧：最喜欢的剧《请回答1988》，没有之一，强烈推荐；</li>
+                                    <li>喜欢音乐：喜欢周杰伦的歌曲，藏了太多故事；</li>
+                                    <li>喜欢运动：最喜欢的是打篮球，偶尔也健身；</li>
+                                    <li>喜欢做菜：闲暇时间会尝试做各种各样的菜，释放压力的不二选择；</li>
+                                </ul>
+                            </blockquote>
+                            <p style="text-align: center"><b><i>期望着：一生，两人，三餐，四季。</i></b></p>
+                        </div>
+                        <div class="zhy-title-QRCode" style="margin-top: 20px">
+                            <p><i class="am-icon-quote-left " style="float: left"></i></p><br>
+                            <div class="zhy-title-QRCode-word">
+                                <strong>欢迎关注我的微信公众号：程序猿刘川枫</strong><br>
+                                <img class="enlargePicture" src="http://images.liujian.cool/img/loading.gif" data-src="http://images.liujian.cool/img/wx-public.jpg"><br>
+                                <strong><p id="hitokoto">每日一言获取中...</p></strong>
+                                <p style="text-align: right;padding-top: 10px"><strong>--- 刘川枫</strong></p>
+                            </div>
+                            <p><i class="am-icon-quote-right " style="float: right"></i></p>
+                        </div>
+                        <br><br><hr data-am-widget="divider" style="" class="am-divider am-divider-dashed" />
+
+                        <div style="text-align: right;margin: 30px auto">
+                            <i class="am-icon-paper-plane am-icon-spin"></i>
+                            <i class="am-icon-paper-plane-o am-icon-spin" style="margin-left: 60px"></i><br>
+                        </div>
+                        <div class="zhy-original">
+                            <div class="zhy-original-title">
+                                <h1 class="zhy-original-title-h1">初衷</h1>
+                                <p class="zhy-erha">
+                                    <img src="http://images.liujian.cool/img/loading.gif" data-src="http://images.liujian.cool/img/上海外滩01.png" class="enlargePicture am-img-thumbnail">
+                                </p><br><br>
+                                <p><i class="am-icon-quote-left " style="float: left"></i></p><br>
+                                <div class="zhy-original-words">
+                                    <p>本博客网站由本人二次开发并步步完善，希望借此来激励自己养成多写博客的习惯，也希望通过分享技术认识更多志同道合的朋友。这里不仅仅会分享技术，也会分享自己的游记，所见所想等等，欢迎大家多多支持。</p><br>
+                                    <p>每个人都会有自己的那一段迷茫期，我自己也不例外，所幸的是有许多人在那段时间帮助过我，给了我极大的信心。我并非那种天资过人的天才，可是比常人更加努力不也是天才吗，既然上天没有给我前者的优越，何不自己创造去属于自己的骄傲。</p><br>
+                                    之前在知乎上看过一条段子【程序猿也是可以有女朋友的】，看了后感触颇深。
+                                    <div class="zhy-quot">
+                                        <blockquote class="zhy-quot-font" style="background-color: #fafafa;">
+                                            <strong>标题：写博客对程序员很重要吗？</strong>
+                                            <p style="margin-top: 7px">之前开了公众号装逼写技术博客，更新了一段时间没人看就不写技术写一些情感、生活、旅游、吃喝玩乐的内容，
+                                                反正只要能写的就都写。</p><br>
+                                            <p>
+                                                后来相亲认识了一妹子，没多久就好上了，主要是那妹纸太主动了，我没守住底线，沦陷了</p><br>
+                                            <p>
+                                                问妹纸为什么主动追我，妹纸说:你的每篇文章我都看了，字里行间感受到了正能量，应该不是那种靠不住的男人，我年纪
+                                                也不小了，机会不容错过，于是就使了点套路。</p><br>
+                                            <p>我之前一直单身，始终找不好女朋友，对我有意思的我不喜欢，我喜欢的对我没感觉。现在能找到个令我满意的女朋友还没费多少
+                                                事我想应该有写博客一部分功劳吧。所以我觉得写博客对程序员来说挺重要的。</p><br>
+                                        </blockquote>
+                                        <p>好吧，重点不在于怎么找女朋友。作为一名开发人员，写博客是很好的一种体现，优秀的人总是乐忠于分享，这也是我决定搭建起这个博客站点的原因吧。相信多年以后，你会感谢曾经的自己所付出的努力，最终你也会成为那个优秀的人。</p><br><br>
+                                    </div>
+                                </div>
+                                <p><i class="am-icon-quote-right " style="float: right"></i></p><br>
+                            </div>
+                        </div>
+                        <hr data-am-widget="divider" style="" class="am-divider am-divider-dashed" />
+                        <div class="zhy-opinion">
+                            <div class="zhy-opinion-title">
+                                <h1 style="font-size: 30px;font-weight: 400">意见反馈</h1>
+                            </div>
+                            <div class="zhy-erha">
+                                <img src="http://images.liujian.cool/img/loading.gif" data-src="http://images.liujian.cool/img/宫崎骏02.png" class="enlargePicture am-img-thumbnail">
+                            </div>
+                            <div class="zhy-opinion-words">
+                                <p><strong><u><i>若本博客有做的不好的地方(涉及版权及其他问题)，请留言私信我进行整改。</i></u></strong></p>
+                            </div>
+                        </div>
+                        <br><br><hr data-am-widget="divider" style="" class="am-divider am-divider-dashed" />
+                        <div class="zhy-life">
+                            <div style="text-align: right;margin: 30px auto">
+                                <i class="am-icon-arrows am-icon-spin"></i>
+                                <i class="am-icon-arrows am-icon-spin" style="margin-left: 60px"></i><br>
+                            </div>
+                            <div class="zhy-life-title">
+                                <span>心情</span>
+                            </div>
+                            <div class="zhy-you">
+                                <img src="http://images.liujian.cool/img/loading.gif" data-src="http://images.liujian.cool/img/北京香山.png" class="enlargePicture am-img-thumbnail">
+                            </div>
+                            <p></p>
+                            <div class="content">
+                                <article>
+                                    <!--年份使用淡出动画，内容使用左侧滑入效果-->
+                                    <h3  data-am-scrollspy="{animation: 'scale-up'}">2020</h3>
+                                    <section data-am-scrollspy="{animation: 'slide-left'}">
+                                        <span class="point-time point-purple"></span>
+                                        <time datetime="2020-12">
+                                            <span>2020/12/09</span>
+                                        </time>
+                                        <aside>
+                                            <p class="things">博客搭建成功第一天</p>
+                                            <p class="brief"><span class="text-yello">
+                                                欢迎大家访问并指出不足。
+                                            </span></p>
+                                        </aside>
+                                    </section>
+                                </article>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="comment">
+                        <div class="comment-top">
+                            <div class="comment-top-input" th:if="${#httpServletRequest.remoteUser}">
+                                <textarea id="comment" placeholder="客官，来说两句吧..."></textarea>
+                            </div>
+                            <div class="comment-top-input" th:unless="${#httpServletRequest.remoteUser}">
+                                <div class="goToLogin">
+                                    &nbsp;&nbsp;&nbsp;<a id="toLogin">登录</a>后才可以发表留言呦...
+                                </div>
+                            </div>
+                            <div class="commentBtn">
+                                <button id="commentBtn" type="button" class="am-btn am-btn-secondary">发表留言</button>
+                            </div>
+                        </div>
+                        <!--页面留言-->
+                        <div class="comment-bottom">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--引入共有底部-->
+    <div th:replace="footer :: footer"></div>
+
+    <!--消息盒子+反馈-->
+    <div th:replace="other :: other"></div>
+</div>
+
+<script src="js/all.js"></script>
+<script src="js/leaveMessage.js"></script>
+<!--放大图片插件-->
+<script src="js/lightgallery/lightgallery.js"></script>
+<script src="js/lightgallery/picturefill.min.js"></script>
+<script src="js/lightgallery/lg-pager.js"></script>
+<script src="js/lightgallery/lg-autoplay.js"></script>
+<script src="js/lightgallery/lg-fullscreen.js"></script>
+<script src="js/lightgallery/lg-zoom.js"></script>
+<script>
+    lightGallery(document.getElementById('wordsView'));
+</script>
+</body>
+</html>

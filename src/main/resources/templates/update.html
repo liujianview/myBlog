@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>更新 | 程序猿刘川枫</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/x-icon" href="http://images.liujian.cool/img/liuchuanfeng.jpg">
+    <link href="https://lib.baomitu.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/update.css">
+    <link href="https://lib.baomitu.com/font-awesome/5.8.0/css/fontawesome.min.css" rel="stylesheet">
+
+    <script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://lib.baomitu.com/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="https://lib.baomitu.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+
+
+</head>
+<body>
+<div id="app">
+    <!--引入共有头部-->
+    <div th:replace="header :: header"></div>
+    <!--页面主体-->
+    <div id="main">
+        <div class="am-container">
+            <div class="am-g">
+                <div class="am-u-sm-12 am-u-lg-11">
+                    <div class="site-inner">
+                        <div class="site-inner-img">
+                            <img src="http://images.liujian.cool/img/宫崎骏01.png
+" class="am-img-thumbnail am-animation-slide-top">
+                        </div>
+                        <div class="site-inner-mywords am-animation-slide-top">
+                            <p><i class="am-icon-quote-left " style="float: left"></i></p><br>
+                            <div class="zhy-word">
+                                <strong><p id="hitokoto">每日一言获取中...</p></strong>
+                            </div>
+                            <p><i class="am-icon-quote-right " style="float: right;"></i></p><br><hr>
+                        </div>
+                    </div>
+                    <div class="zhy-update">
+                        <div class="zhy-update-log">
+                            <div class="zhy-update-log-title" data-am-scrollspy="{animation: 'slide-bottom'}">
+                                <h1>更新日志</h1>
+                            </div>
+
+                            <div class="zhy-update-log-content">
+
+                                <div class="update-log " >
+                                    <div class="update-log-date">
+                                        <i class="am-icon-hashtag"></i>
+                                        <h2>2020年12月30日</h2>
+                                    </div>
+                                    <div class="update-log-content">
+                                        <blockquote>
+                                            <p>增加照片墙功能</p>
+                                            <p>支持用户根据日期分类查看照片</p>
+                                            <p>支持管理员编辑添加删除照片</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="update-log " >
+                                    <div class="update-log-date">
+                                        <i class="am-icon-hashtag"></i>
+                                        <h2>2020年12月28日</h2>
+                                    </div>
+                                    <div class="update-log-content">
+                                        <blockquote>
+                                            <p>支持QQ登录,个人主页获取到QQ昵称,QQ头像</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="update-log " >
+                                    <div class="update-log-date">
+                                        <i class="am-icon-hashtag"></i>
+                                        <h2>2020年12月18日</h2>
+                                    </div>
+                                    <div class="update-log-content">
+                                        <blockquote>
+                                            <p>增加博客背景鼠标绘制多边形,点击出现爱心功能</p>
+                                            <p>增加阿里druid连接池监控功能</p>
+                                            <p>增加nginx反向代理</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="update-log " >
+                                    <div class="update-log-date">
+                                        <i class="am-icon-hashtag"></i>
+                                        <h2>2020年12月16日</h2>
+                                    </div>
+                                    <div class="update-log-content">
+                                        <blockquote><p>增加每日一言功能</p>
+                                            <p>隐藏在某些页面的"一言"</p>
+                                            <p>页面刷新会及时更换"一言"内容</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="update-log " >
+                                    <div class="update-log-date">
+                                        <i class="am-icon-hashtag"></i>
+                                        <h2>2020年12月15日</h2>
+                                    </div>
+                                    <div class="update-log-content">
+                                        <blockquote><p>增加本地图片上传功能</p>
+                                            <p>包括更换个人头像,文章图片编辑等</p>
+                                            <p>图片上传到"七牛云OSS对象存储"</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="update-log " >
+                                    <div class="update-log-date">
+                                        <i class="am-icon-hashtag"></i>
+                                        <h2>2020年12月11日</h2>
+                                    </div>
+                                    <div class="update-log-content">
+                                        <blockquote><p>增加邮箱发送验证码功能</p>
+                                            <p>包括注册登录修改密码时,验证码的获取</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="update-log " >
+                                    <div class="update-log-date">
+                                        <i class="am-icon-hashtag"></i>
+                                        <h2>2020年12月09日</h2>
+                                    </div>
+                                    <div class="update-log-content">
+                                        <blockquote><p>个人博客上线</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="update-leave-message">
+                        <div class="comment" style="margin: 0 auto 50px">
+                            <div class="comment-top">
+                                <div class="comment-top-input" th:if="${#httpServletRequest.remoteUser}">
+                                    <textarea id="comment" placeholder="客官，来说两句吧..."></textarea>
+                                </div>
+                                <div class="comment-top-input" th:unless="${#httpServletRequest.remoteUser}">
+                                    <div class="goToLogin">
+                                        &nbsp;&nbsp;&nbsp;<a id="toLogin">登录</a>后才可以发表留言呦...
+                                    </div>
+                                </div>
+                                <div class="commentBtn">
+                                    <button id="commentBtn" type="button" class="am-btn am-btn-secondary">发表留言</button>
+                                </div>
+                            </div>
+                            <div class="comment-bottom">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--引入共有底部-->
+    <div th:replace="footer :: footer"></div>
+    <!--消息盒子+反馈-->
+    <div th:replace="other :: other"></div>
+</div>
+
+<script src="js/all.js"></script>
+<script src="js/leaveMessage.js"></script>
+
+</body>
+</html>
