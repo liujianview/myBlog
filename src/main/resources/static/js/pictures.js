@@ -34,10 +34,10 @@
             }
             var timelineRowMajor = $('<div class="timeline-row-major"></div>');
             timelineRowMajor.append($('<span class="node am-animation-slide-top am-animation-delay-1"></span>'));
-            var content = $('<div class="content am-comment-main am-animation-slide-top am-animation-delay-1"></div>');
+            var content = $('<div id="wordsView" class="content am-comment-main am-animation-slide-top am-animation-delay-1"></div>');
             content.append($('<header class="am-comment-hd" style="background: #fff">' +
                 '<div class="contentTitle am-comment-meta">' +
-                '<img src="'+obj['pictureUrl'] + '" style="width: 300px;height:240px" class="enlargePicture">'+
+                '<img src="'+obj['pictureUrl'] + '" style="width: 300px;height:240px">'+
                 '</div>' +
                 '</header>'));
             var amCommentBd = $('<div class="am-comment-bd"></div>');
@@ -62,6 +62,19 @@
             '</ul>' +
             '</div>' +
             '</div>'));
+
+
+        //选中所有需放大的图片加上data-src属性
+        $("#wordsView img").each(function(index){
+            if(!$(this).hasClass("emoji")){
+                var a=$(this).attr('src');
+                $(this).attr("data-src",a);
+
+                $(this).addClass("enlargePicture");
+            }
+        });
+        //放大图片框架
+        lightGallery(document.getElementById('wordsView'));
     }
 
     $.ajax({
