@@ -1114,6 +1114,10 @@
                     var h3_list = eval(setting.list2.replace("$list1","$(h2_list[i])"));
 
                     for(var j=0; j<h3_list.length; j++){
+                        var tmp = $(h3_list[j]).prevAll('h2').first();
+                        if(!tmp.is(h2_list[i])){
+                            break;
+                        }
                         var h3_id = "_label_h3_" + i + "_" + j;
                         var h3_text = $(h3_list[j]).text();
                         //去左右空格;
@@ -1136,84 +1140,11 @@
     $(function(){
         //初始化
         tip.init();
+        //生成目录弹窗
+        tip.generateContentList({
+            list1:$('#wordsView h2'),//目录的一级标题集合（如何找到一级目录）
+            list2:"$list1.nextAll('h3')",//目录的二级标题集合，（如何从每个一级目录节点$list1下面找到二级目录）
+            offset: ['25%', '3%'],//弹窗位置
+            area:["200px","300px"]//弹窗大小
+        });
     });
-
-    //锚点信息数组
-    var navCategoryAnchor = [];
-
-    //点击章节，滚动带动画效果
-    $("body").on("click","#navCategory a",function() {
-        $("html, body").animate({
-            scrollTop: $($(this).attr("href")).offset().top - 100 + "px"
-        }, 800);
-        return false;
-    });
-
-    //监听鼠标滚动事件
-    window.addEventListener('scroll', function () {
-        //无需频繁的进行遍历判断
-        if(new Date().getTime() % 2 == 0){
-            var scrolled = document.documentElement.scrollTop || document.body.scrollTop
-            for(var i = 0;i<navCategoryAnchor.length;i++){
-                if((i==0) ?
-                    (navCategoryAnchor[i+1].offset >= scrolled) :
-                    (navCategoryAnchor[i].offset <= scrolled && ((i == navCategoryAnchor.length - 1) ? true : navCategoryAnchor[i + 1].offset >= scrolled))){
-
-                    $("#"+navCategoryAnchor[i].a).css("color","#519cea");
-                }else{
-                    $("#"+navCategoryAnchor[i].a).css("color","");
-                }
-            }
-        }
-    });
-
-    //生成目录索引列表
-    function GenerateContentList(){
-        var h2_list = $('#wordsView h2');//目录的一级标题，找到所有h2
-
-        if(h2_list.length>0){
-            //返回顶部，元素之前追加
-            $("body").prepend('<a name="_labelTop"></a>');
-
-            var content    = '<div id="navCategory">';
-            content    += '<ul>';
-            //一级标题
-            for(var i =0;i<h2_list.length;i++){
-                var h2_id = "_label_h2" + i;
-                var h2_text = $(h2_list[i]).text();
-                //去左右空格;
-                h2_text = h2_text.replace(/(^\s*)|(\s*$)/g, "");
-                $(h2_list[i]).attr("id",h2_id);
-                //锚点位置
-                navCategoryAnchor.push({a:h2_id+"_a",offset:$(h2_list[i]).offset().top});
-                content += '<li><a id="'+h2_id+'_a" href="#' + h2_id + '">' + h2_text + '</a></li>';
-                //目录的二级标题，找到所有的h3
-                var h3_list = $(h2_list[i]).nextAll("h3");
-
-                for(var j=0; j<h3_list.length; j++){
-                    var tmp = $(h3_list[j]).prevAll('h2').first();
-                    if(!tmp.is(h2_list[i])){
-                        break;
-                    }
-                    var h3_id = "_label_h3_" + i + "_" + j;
-                    var h3_text = $(h3_list[j]).text();
-                    //去左右空格;
-                    h3_text = h3_text .replace(/(^\s*)|(\s*$)/g, "");
-                    $(h3_list[j]).attr("id",h3_id);
-                    //锚点位置
-                    navCategoryAnchor.push({a:h3_id+"_a",offset:$(h3_list[j]).offset().top});
-                    content += '<li style="padding-left: 25px"><a id="'+h3_id+'_a" href="#' + h3_id + '">' + h3_text + '</a></li>';
-                }
-            }
-            content += '</ul>';
-            content += '</div>';
-
-            //生成目录拖拽弹窗
-            tip.dialog({title:"目录",content:content,offset: ['25%', '3%'],area:["200px","300px"],shade:0});
-        }
-    }
-
-    $(function($){
-        //执行代码
-        GenerateContentList();
-    })
