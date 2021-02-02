@@ -47,9 +47,9 @@ public class UserServiceImpl implements UserService {
             return DataMap.fail(CodeType.EMAIL_EXIST);
         }
         if("male".equals(user.getGender())){
-            user.setAvatarImgUrl("http://images.liujian.cool/img/noLogin_male.jpg");
+            user.setAvatarImgUrl("https://images.liujian.cool/img/noLogin_male.jpg");
         } else {
-            user.setAvatarImgUrl("http://images.liujian.cool/img/noLogin_female.jpg");
+            user.setAvatarImgUrl("https://images.liujian.cool/img/noLogin_female.jpg");
         }
         userMapper.save(user);
         int userId = userMapper.findUserIdByEmail(user.getEmail());

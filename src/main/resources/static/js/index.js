@@ -1,6 +1,6 @@
 
     //网站最后更新时间（版本更新需更改）
-    var siteLastUpdateTime = '2021年01月27日19点';
+    var siteLastUpdateTime = '2021年02月02日19点';
 
     //网站开始时间
     var siteBeginRunningTime = '2020-12-09 18:00:00';
@@ -308,8 +308,8 @@
 
     //点击扫描二维码时获取二维码图片
     $('.myCardBtn').click(function () {
-        $('.qq_code').attr("src","http://images.liujian.cool/img/QQ.png");
-        $('.weixin_code').attr("src","http://images.liujian.cool/img/wx.png");
+        $('.qq_code').attr("src","https://images.liujian.cool/img/QQ.png");
+        $('.weixin_code').attr("src","https://images.liujian.cool/img/wx.png");
     });
 
     ajaxFirst(1);

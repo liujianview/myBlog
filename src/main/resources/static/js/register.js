@@ -178,12 +178,12 @@
         register_clear.html('');
         var sec = $('<div class="register_success"></div>');
         var register_success_img = $('<div class="register_success_img">\n' +
-            '            <img src="http://images.liujian.cool/img/register_success.gif" class="am-img-thumbnail">\n' +
+            '            <img src="https://images.liujian.cool/img/register_success.gif" class="am-img-thumbnail">\n' +
             '        </div>');
         sec.append(register_success_img);
 
         var register_success_words = $('<div class="register_success_words">\n' +
-            '            <img src="http://images.liujian.cool/img/register_icon.png">\n' +
+            '            <img src="https://images.liujian.cool/img/register_icon.png">\n' +
             '            <p>恭喜注册成功，快去登录吧</p>\n' +
             '        </div>');
         sec.append(register_success_words);

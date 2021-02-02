@@ -142,7 +142,7 @@ $('#sidebar_toggle').click(function () {
         error:function () {
         }
     });
-    $('.weixinPublic').attr("src","http://images.liujian.cool/img/wx-public.jpg");
+    $('.weixinPublic').attr("src","https://images.liujian.cool/img/wx-public.jpg");
 });
 
 //获得登录用户未读消息

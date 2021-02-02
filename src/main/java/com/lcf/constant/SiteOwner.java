@@ -15,6 +15,6 @@ public interface SiteOwner {
     /**
      * 填写网站域名或ip地址(最好是域名，如果你还没有域名填ip也行吧)
      */
-    String SITE_OWNER_URL = "http://liujian.cool";
+    String SITE_OWNER_URL = "https://liujian.cool";
 
 }

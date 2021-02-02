@@ -53,7 +53,7 @@
             '<div class="show-weixin">' +
             '<p><i class="weiXinQuoteLeft am-icon-quote-left "></i></p><br>' +
             '<p class="show-weixin-pic">' +
-            '<img src="http://images.liujian.cool/img/wx-public.jpg">' +
+            '<img src="https://images.liujian.cool/img/wx-public.jpg">' +
             '</p>' +
             '<p class="show-weixin-pic">欢迎关注我的微信公众号：程序猿刘川枫</p>' +
             '<p><i class="weiXinQuoteRight am-icon-quote-right "></i></p>' +
@@ -117,7 +117,7 @@
             $('.likeHeart').find('i').removeClass("am-icon-heart-o");
             $('.likeHeart').find('i').addClass("am-icon-heart");
         }
-        $('.other').append($('<div class="social-share" data-initialized="true" data-url="http://liujian.cool/article/' + data.articleId  + '"  data-title="' + data.articleTitle + '">' +
+        $('.other').append($('<div class="social-share" data-initialized="true" data-url="https://liujian.cool/article/' + data.articleId  + '"  data-title="' + data.articleTitle + '">' +
             '<a href="#" class="social-share-icon icon-qq" data-am-popover="{content: \'分享至QQ好友\', trigger: \'hover focus\'}"></a>' +
             '<a href="#" class="social-share-icon icon-qzone" data-am-popover="{content: \'分享至QQ空间\', trigger: \'hover focus\'}"></a>' +
             '<a href="#" class="social-share-icon icon-wechat"></a>' +
@@ -523,7 +523,7 @@
             } else {
                 $('.content').html('');
                 var error = $('<div class="article"><div class="zhy-article-top"><div class="error">' +
-                    '<img src="http://images.liujian.cool/img/register_success.jpg">' +
+                    '<img src="https://images.liujian.cool/img/register_success.jpg">' +
                     '<p>没有找到这篇文章哦</p>' +
                     '<p>可能不小心被博主手残删掉了吧</p>' +
                     '<div class="row">' +
