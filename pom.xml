@@ -150,6 +150,12 @@
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 
+		<!--引入rabbitmq所需依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
 
 		<!--Redis-->
 		<dependency>

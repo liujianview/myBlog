@@ -24,7 +24,7 @@ public class FileUtil {
         log.info("FileUtil uploadFile filePath:[{}],fileName:[{}]",file.getPath(),file.getName());
         //上传至七牛云OSS
         String fileName = QiNiuYunOSSUtil.uploadFile2OSS(file,subCatalog);
-        String picUrl = "http://" + OSSClientConstants.ENDPOINT + "/" + fileName;
+        String picUrl = "https://" + OSSClientConstants.ENDPOINT + "/" + fileName;
 
         //删除临时生成的文件
         File deleteFile = new File(file.toURI());

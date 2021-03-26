@@ -4,6 +4,7 @@ import com.lcf.redis.StringRedisServiceImpl;
 import com.lcf.utils.EmailRandomUtil;
 import com.lcf.utils.JsonResult;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 /**
@@ -30,6 +32,9 @@ public class GetEmailCodeController {
     @Autowired
     JavaMailSender mailSender;//注入发送邮件的bean
 
+    @Autowired
+    RabbitTemplate rabbitTemplate;
+
     @Value("${spring.mail.username}")
     private String emailUserName;
 
@@ -46,6 +51,44 @@ public class GetEmailCodeController {
     @PostMapping(value = "/getCode", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String getEmail(@RequestParam("email") String email) {
         try {
+            //用mq给用户邮箱发送验证码
+            rabbitTemplate.convertAndSend("testChange","email.bar.test", email);
+        } catch (Exception e) {
+            log.error("[{}] send email message exception", email, e);
+            return JsonResult.fail().toJSON();
+        }
+        return JsonResult.success().toJSON();
+    }
+
+    /**
+     * @description: 获取验证码存入redis拼装邮件内容
+     * @param email
+     * @return: java.lang.String
+     * @author: LiuJian
+     * @time: 2021/3/24 17:11
+     */
+    private String setEmailBody(String email){
+        //获取邮箱随机验证码
+        String emailCode = EmailRandomUtil.randomNumBuilder();
+        //在redis中保存邮箱验证码并设置过期时间
+        stringRedisService.set(email, emailCode);
+        stringRedisService.expire(email, 300);
+        StringBuffer body = new StringBuffer();
+        body.append("客官您来啦,里面请!\n\n").append("    您的验证码为:  ").append(emailCode+"\n\n");
+        body.append("    客官请注意:需要您在收到邮件后5分钟内使用，否则该验证码将会失效。\n\n");
+        return body.toString();
+    }
+
+    /**
+     * @description: 向指定邮箱发送邮件
+     * @param email
+     * @return: void
+     * @author: LiuJian
+     * @time: 2021/3/24 17:10
+     */
+    public void sendEmail(String email){
+        try {
+            //获取验证码存入redis拼装邮件内容
             String body = setEmailBody(email);
             MimeMessage mimeMessage = this.mailSender.createMimeMessage();
             MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
@@ -59,23 +102,9 @@ public class GetEmailCodeController {
 //            helper.addInline("picture",file);//添加带静态资源的邮件
             log.info("getEmail send email message: [{}]", message);
             this.mailSender.send(mimeMessage);
-        } catch (Exception e) {
-            log.error("[{}] send email message exception", email, e);
-            return JsonResult.fail().toJSON();
+        } catch (MessagingException e) {
+            log.info("getEmail send email exception: [{}]", e);
         }
-        return JsonResult.success().toJSON();
-    }
-
-    private String setEmailBody(String email){
-        //获取邮箱随机验证码
-        String emailCode = EmailRandomUtil.randomNumBuilder();
-        //在redis中保存邮箱验证码并设置过期时间
-        stringRedisService.set(email, emailCode);
-        stringRedisService.expire(email, 300);
-        StringBuffer body = new StringBuffer();
-        body.append("客官您来啦,里面请!\n\n").append("    您的验证码为:  ").append(emailCode+"\n\n");
-        body.append("    客官请注意:需要您在收到邮件后5分钟内使用，否则该验证码将会失效。\n\n");
-        return body.toString();
     }
 
 }
